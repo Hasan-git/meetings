@@ -1,0 +1,142 @@
+<header class="h-100">
+  <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark intro-fixed-nav teal darken-2"
+    [containerInside]="false">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand" href="#">
+        <strong>Meeting Management</strong>
+      </a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/'">
+          <a class="nav-link" mdbTooltip="Home" placement="bottom">
+            <mdb-icon fas icon="home"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/calendar'">
+          <a class="nav-link" mdbTooltip="Calendar" placement="bottom">
+            <mdb-icon fas icon="calendar-alt"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/address'">
+          <a class="nav-link" mdbTooltip="Address Book" placement="bottom">
+            <mdb-icon fas icon="address-book"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/in-room-app'">
+          <a class="nav-link" mdbTooltip="In Room App" placement="bottom">
+            <mdb-icon fas icon="tablet-alt"></mdb-icon>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active waves-light" mdbWavesEffect [routerLink]="'/meeting'">
+          <a class="nav-link" mdbTooltip="In Room App" placement="bottom">
+            <mdb-icon fas icon="mobile"></mdb-icon>
+          </a>
+        </li>
+        <!-- Dropdown -->
+        <!-- <li class="nav-item dropdown active" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="tablet-alt"></mdb-icon><span class="caret"></span>
+            <span class="sr-only">(current)</span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="'/in-room-app'">
+              <mdb-icon fas icon="sign-in-alt"></mdb-icon> In Room Tablet
+            </a>
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="'/on-door-app'">
+              <mdb-icon fas icon="door-closed"></mdb-icon> On Door Tablet
+            </a>
+          </div>
+        </li> -->
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown" dropdown>
+
+          <a dropdownToggle class="nav-link p-0" href="#">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+              alt="avatar image" height="35" mdbWavesEffect>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Account</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Access Backend</a>
+            <div class="divider dropdown-divider"></div>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+</header>
+<!--Main Navigation-->
+<!-- <link rel="stylesheet" type="text/css" href="../../../../node_modules/html5-device-mockups/dist/device-mockups.min.css"> -->
+
+<div class="container" class="bg">
+  <div class="row" style="margin-right: 0px; margin-left: 0px;">
+    <div class="col-sm-12">
+      <div class="marvel-device ipad silver landscape"
+        [ngStyle]="innerWidth<1400 ?{'height': '506px', 'left':'16%', 'top':'12%'} : {'height': '506px', 'left':'18%', 'top':'25%'}">
+        <div class="camera"></div>
+        <div class="screen">
+
+          <!-- Content goes here -->
+          <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;" *ngIf="homepage">
+            <button type="button" class="btn btn-outline-secondary">Start Meeting</button>
+          </div>
+
+          <div fxLayout="column" fxLayoutAlign="start start" style="height: 100%;" *ngIf="agenda">
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;">
+              <button type="button" class="btn btn-secondary btn-sm">Start Meeting</button>
+              <div class="timer">
+                <mdb-icon fas icon="stopwatch mr-1"></mdb-icon>
+                {{elapsed}} m
+
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="15px" style="width: 100%;" class="p-3">
+              <div style="width: 100%;" fxFlex="calc(60% - 15px)">
+
+                <app-topic></app-topic>
+
+                <div class="box" fxLayout="row">
+                  <div>Issue</div>
+                  <mdb-icon fas icon="check"></mdb-icon>
+                </div>
+
+                <div class="box" fxLayout="row">
+                  <div>Issue</div>
+                  <mdb-icon fas icon="check"></mdb-icon>
+                </div>
+
+              </div>
+
+              <div class="pan" fxFlex="calc(40% - 15px)">
+                <div class="pan-header">Create 20 propsal</div>
+                <textarea class="form-control" placeholder="Note" rows="3"></textarea>
+                <div class="btns" fxLayout="row" fxLayoutAlign="space-between start">
+                  <div class="e-btn ">
+                    <mdb-icon class="mr-1" fas icon="user-tag"></mdb-icon>
+                    To-do
+                  </div>
+                  <div class="e-btn">
+                    <mdb-icon class="mr-1" fas icon="check"></mdb-icon>
+                    Resolve
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div class="owner-label">Owner:</div>
+                  <div class="owner-name">Mazen Farah</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="home" (click)="goHome()" style="cursor: pointer"></div>
+      </div>
+    </div>
+  </div>
+</div>
