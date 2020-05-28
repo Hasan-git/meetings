@@ -9,6 +9,8 @@ import { AddressBookComponent } from './pages/address-book/address-book.componen
 import { InRoomAppComponent } from './pages/in-room-app/in-room-app.component';
 import { OnDoorAppComponent } from './pages/on-door-app/on-door-app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { InvitationComponent } from './pages/invitation/invitation.component';
 
 const routes: Routes = [
   // {
@@ -22,12 +24,20 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: 'calendar',
     component: CalendarPageComponent
   },
   {
     path: "event/:id",
     component: SingleEventComponent
+  },
+  {
+    path: "invitation/:id",
+    component: InvitationComponent
   },
   {
     path: "address",

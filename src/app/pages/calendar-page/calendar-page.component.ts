@@ -212,7 +212,6 @@ export class CalendarPageComponent {
         start: new Date(this.startingDate).toISOString(),
         end: new Date(this.endingDate).toISOString(),
         title: this.eventName,
-        data: this.data,
         topics: this.topics,
         truevotes: [],
         falsevotes: [],
@@ -229,12 +228,8 @@ export class CalendarPageComponent {
         }
       };
 
-      this.selectedItems_Users.forEach(user => {
-        user.voted = '';
-        // this.myHelper.getUserById(user.id).subscribe((res:any)=>{
-        //   this.string+=res[0].name+',';
-
-        //  });
+      this.topics.forEach(user => {
+          this.string+=user.user[0].name+',';
       })
 
       var curr_date = this.startingDate.getDate();
@@ -249,23 +244,24 @@ export class CalendarPageComponent {
       var endtime = this.formatAMPM(this.endingDate)
       var endingdate = curr_year_end + "-" + curr_month_end + "-" + curr_date_end + " at " + endtime;
 
-      // this.data.forEach(agenda=>{
-      //   this.agenda+="Topic:"+agenda.id+"-Duration:"+agenda.name+"-Responsible:"+agenda.responsible+'<br />';
-      // })
+      this.topics.forEach(agenda=>{
+        this.agenda+="Topic:"+agenda.topic+"-Duration:"+agenda.duration+"-Owner:"+agenda.user[0].name+'<br />';
+      })
 
-      // const body={
-      //   yahyaemail:"yahya.abihaidar98@gmail.com",
-      //   event_name:this.eventName,
-      //   event_start_date:startingdate,
-      //   event_agenda:this.agenda,
-      //   event_location:this.selectedItems_Rooms[0].name,
-      //   event_invitees:this.string,
-      //   event_end_date:endingdate
-      // }
 
-      //  this.sendMail(body).then((res) => {
-      //   //  console.log(res);
-      //  });
+      const body={
+        email:"yahya.abihaidar98@gmail.com",
+        event_name:this.eventName,
+        event_start_date:startingdate,
+        event_agenda:this.agenda,
+        event_location:this.selectedItems_Rooms[0].name,
+        event_invitees:this.string,
+        event_end_date:endingdate
+      }
+
+       this.sendMail(body).then((res) => {
+        //  console.log(res);
+       });
 
       this.db.collection('MyEvents').doc(eventToSave.title).set(eventToSave);
 
