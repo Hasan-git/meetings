@@ -1,3 +1,5 @@
+import { ChatBoxComponent } from './pages/meeting/chat-box/chat-box.component';
+import { PanComponent } from './pages/meeting/pan/pan.component';
 import { TopicComponent } from './pages/meeting/topic/topic.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -58,6 +60,8 @@ import { CountdownModule } from 'ngx-countdown';
     LoadingComponent,
     MeetingComponent,
     TopicComponent,
+    PanComponent,
+    ChatBoxComponent,
   ],
   imports: [
     ChatModule,

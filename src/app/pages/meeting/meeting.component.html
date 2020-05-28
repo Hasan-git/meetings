@@ -76,60 +76,49 @@
   <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-12">
       <div class="marvel-device ipad silver landscape"
-        [ngStyle]="innerWidth<1400 ?{'height': '506px', 'left':'16%', 'top':'12%'} : {'height': '506px', 'left':'18%', 'top':'25%'}">
+        [ngStyle]="innerWidth<1400 ?{'height': '506px', 'left':'16%', 'top':'12%'} : {'height': '650px','width':'950px', 'left':'18%', 'top':'25%'}">
         <div class="camera"></div>
         <div class="screen">
 
           <!-- Content goes here -->
           <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;" *ngIf="homepage">
-            <button type="button" class="btn btn-outline-secondary">Start Meeting</button>
+            <div class="spinner-grow text-success" role="status" [hidden]="!loading">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Start Meeting</button>
           </div>
 
-          <div fxLayout="column" fxLayoutAlign="start start" style="height: 100%;" *ngIf="agenda">
+          <div fxLayout="column" fxLayoutAlign="start start" style="height: 100%;overflow: auto;" *ngIf="agenda">
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;">
-              <button type="button" class="btn btn-secondary btn-sm">Start Meeting</button>
+              <button type="button" class="btn btn-secondary btn-sm">End Meeting</button>
               <div class="timer">
                 <mdb-icon fas icon="stopwatch mr-1"></mdb-icon>
                 {{elapsed}} m
+              </div>
+            </div>
 
+            <div class="pl-3 pr-3 pt-3 pb-2" style="width: 100%;" fxLayout="row" fxLayoutAlign="center start">
+              <a *ngFor="let user of event?.meta?.users; index as i" [ngClass]="{'offline': i==1 || i==3}" dropdownToggle class="nav-link user p-0 mr-4" href="javascript:void(0);">
+                <img [src]="user.image" class="user-img rounded-circle z-depth-0"
+                  alt="avatar image" height="35" mdbWavesEffect>
+              </a>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="15px" style="width: 100%;" class="p-3">
+
+              <div style="width: 100%;" fxFlex="calc(60% - 15px)">
+                <ng-container *ngFor="let topic of event?.topics">
+                  <app-topic [topic]="topic" [activeTopicId]="event.activeTopicId" (completed)="onTopicCompleted($event)"></app-topic>
+                </ng-container>
+              </div>
+
+              <div class="pan" fxFlex="calc(40% - 15px)">
+                <app-pan [topic]="activeTopic"></app-pan>
               </div>
             </div>
 
             <div fxLayout="row" fxLayoutGap="15px" style="width: 100%;" class="p-3">
-              <div style="width: 100%;" fxFlex="calc(60% - 15px)">
-
-                <app-topic></app-topic>
-
-                <div class="box" fxLayout="row">
-                  <div>Issue</div>
-                  <mdb-icon fas icon="check"></mdb-icon>
-                </div>
-
-                <div class="box" fxLayout="row">
-                  <div>Issue</div>
-                  <mdb-icon fas icon="check"></mdb-icon>
-                </div>
-
-              </div>
-
-              <div class="pan" fxFlex="calc(40% - 15px)">
-                <div class="pan-header">Create 20 propsal</div>
-                <textarea class="form-control" placeholder="Note" rows="3"></textarea>
-                <div class="btns" fxLayout="row" fxLayoutAlign="space-between start">
-                  <div class="e-btn ">
-                    <mdb-icon class="mr-1" fas icon="user-tag"></mdb-icon>
-                    To-do
-                  </div>
-                  <div class="e-btn">
-                    <mdb-icon class="mr-1" fas icon="check"></mdb-icon>
-                    Resolve
-                  </div>
-                </div>
-                <div fxLayout="row">
-                  <div class="owner-label">Owner:</div>
-                  <div class="owner-name">Mazen Farah</div>
-                </div>
-              </div>
+              <app-chat-box [users]="event.meta.users" style="width: 100%;"></app-chat-box>
             </div>
 
           </div>

@@ -29,6 +29,11 @@
             <mdb-icon fas icon="tablet-alt"></mdb-icon>
           </a>
         </li>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/meeting'">
+          <a class="nav-link" mdbTooltip="In Room App" placement="bottom">
+            <mdb-icon fas icon="mobile"></mdb-icon>
+          </a>
+        </li>
         <!-- Dropdown -->
         <!-- <li class="nav-item dropdown" dropdown>
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
@@ -202,8 +207,9 @@
     </div>
     <div class="col-sm-7">
       <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Agenda</h4>
+        <div class="card-body" fxLayout="row" fxLayoutAlign="space-between center">
+          <h4 class="card-title m-0">Agenda</h4>
+          <button type="button" class="btn btn-info btn-sm" [routerLink]="['/meeting',myEvent?.title]">Start Meeting</button>
         </div>
         <div class="p-2">
           <table class="table table-bordered">

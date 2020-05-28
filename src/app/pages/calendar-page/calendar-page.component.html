@@ -29,6 +29,11 @@
             <mdb-icon fas icon="tablet-alt"></mdb-icon>
           </a>
         </li>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/meeting'">
+          <a class="nav-link" mdbTooltip="In Room App" placement="bottom">
+            <mdb-icon fas icon="mobile"></mdb-icon>
+          </a>
+        </li>
         <!-- Dropdown -->
         <!-- <li class="nav-item dropdown" dropdown>
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
@@ -312,7 +317,14 @@
                         <tbody>
                           <tr *ngFor="let item of topics;  index as i">
                             <td><input class="form-control" placeholder="Topic" [(ngModel)]="topics[i].topic"> </td>
-                            <td><input class="form-control" placeholder="Duration" [(ngModel)]="topics[i].duration"></td>
+                            <td>
+                              <div class="input-group">
+                                <input class="form-control" placeholder="Duration" [(ngModel)]="topics[i].duration">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">min</div>
+                                </div>
+                              </div>
+                            </td>
                             <td style="min-width: 300px;max-width: 300px;">
                               <ng-multiselect-dropdown style="min-width: 300px;" [placeholder]="'Users'" [data]="dropdownList_Users"
                                 [(ngModel)]="topics[i].user" [settings]="dropdownSettings_Users_Single"

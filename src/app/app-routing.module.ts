@@ -42,7 +42,7 @@ const routes: Routes = [
     component: OnDoorAppComponent
   },
   {
-    path: 'meeting',
+    path: 'meeting/:title',
     component: MeetingComponent
   },
   {

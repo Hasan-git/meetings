@@ -23,7 +23,7 @@ export class SingleEventComponent implements OnInit {
   totalUsersToAdd: any[] = [];
   now: any = new Date();
   topics: Topic[] = []
-  rate= 4;
+  rate = 4;
   data = [];
   settings = {
     columns: {
@@ -96,7 +96,6 @@ export class SingleEventComponent implements OnInit {
 
             userToPush = res[0];
             userToPush.voted = user.voted;
-            console.log(userToPush);
 
             this.totalUsersToAdd.push(userToPush);
             // this.http.get('https://randomuser.me/api/?inc=name,location,nat,picture')
