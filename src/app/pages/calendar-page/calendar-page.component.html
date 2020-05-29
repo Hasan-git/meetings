@@ -276,6 +276,22 @@
                         (onSelect)="onItemSelectRoom($event)" (onSelectAll)="onSelectAllRoom($event)">
                       </ng-multiselect-dropdown>
                     </div>
+
+                    <div class="custom-control custom-checkbox mt-3">
+                      <input type="checkbox" class="custom-control-input" [(ngModel)]="recurrent" id="customCheck" name="example1">
+                      <label class="custom-control-label" for="customCheck">Recurrent</label>
+                    </div>
+                    <div [hidden]="!recurrent">
+                      <div class="form-group mt-3">
+                        <label for="exampleFormControlSelect1">Repeat frequency</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Daily</option>
+                          <option>Weekly</option>
+                          <option>Monthly</option>
+                        </select>
+                      </div>
+                    </div>
+
                     <div style="margin-top: 30px;">
                       <strong class="weight">Starts On</strong>
                       <dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="15"
@@ -311,6 +327,7 @@
                           <th>Topic</th>
                           <th>Duration</th>
                           <th>Owner</th>
+                          <th>Voting</th>
                           <th>Attachments</th>
                           <th class="action-col"></th>
                         </thead>
@@ -331,6 +348,12 @@
                                 (onSelect)="onItemSelectUser($event)">
                               </ng-multiselect-dropdown>
                             </td>
+                            <td>
+                              <div class="custom-control custom-checkbox vote_enabled">
+                                <input type="checkbox" class="custom-control-input" [(ngModel)]="topics[i].votes_enabled" id="customCheck" name="example1">
+                                <label class="custom-control-label" for="customCheck"></label>
+                              </div>
+                            </td>
                             <td class="topic-file-td">
                               <file-pond
                                 [options]="pondOptions_topics"
@@ -344,7 +367,7 @@
                             </td>
                           </tr>
                           <tr [hidden]="topics.length">
-                            <td class="no-topics" colspan="5" (click)="newTopic()">Press here to add a new topic</td>
+                            <td class="no-topics" colspan="6" (click)="newTopic()">Press here to add a new topic</td>
                           </tr>
                         </tbody>
 

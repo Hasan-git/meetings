@@ -146,3 +146,18 @@ table.table td {
   align-items: center;
   padding-top: 2px;
 }
+
+.vote-up {
+  font-weight: 400;
+  color: #4cc17e;
+}
+
+.vote-down {
+  font-weight: 400;
+  color: #c37878;
+}
+
+.vote-up *,
+.vote-down * {
+  font-size: 14px!important;
+}

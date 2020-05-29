@@ -196,3 +196,13 @@ tr {
   text-align: center;
   cursor: pointer;
 }
+
+.vote_enabled {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 !important;
+  justify-content: center;
+  margin-left: 22px;
+  margin-top: -6px;
+}
