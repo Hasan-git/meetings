@@ -45,8 +45,12 @@ import { OnDoorAppComponent } from './pages/on-door-app/on-door-app.component';
 import { SingleEventComponent } from './pages/single-event/single-event.component';
 import { MyHelperService } from './services/my-helper.service';
 import { CountdownModule } from 'ngx-countdown';
+import { SecretaryDashboardComponent } from './pages/secretary-dashboard/secretary-dashboard.component';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+
 // import filepond module
 // firebase imports, omit what you don't need for your app
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +66,8 @@ import { CountdownModule } from 'ngx-countdown';
     TopicComponent,
     PanComponent,
     ChatBoxComponent,
+    SecretaryDashboardComponent,
+    NgxDocViewerModule
   ],
   imports: [
     ChatModule,

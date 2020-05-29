@@ -1,3 +1,4 @@
+import { SecretaryDashboardComponent } from './pages/secretary-dashboard/secretary-dashboard.component';
 import { MeetingComponent } from './pages/meeting/meeting.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     pathMatch: 'full'
+  },
+  {
+    path: "secretary-dashboard",
+    component: SecretaryDashboardComponent
   },
   {
     path: 'calendar',
