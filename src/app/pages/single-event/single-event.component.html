@@ -29,9 +29,9 @@
             <mdb-icon fas icon="tablet-alt"></mdb-icon>
           </a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/dashboard'">
-          <a class="nav-link" mdbTooltip="Dashboard" placement="bottom">
-            <mdb-icon fas icon="chart-bar"></mdb-icon>
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/secretary-dashboard'">
+          <a class="nav-link" mdbTooltip="dashboard" placement="bottom">
+            <mdb-icon fas icon="chart-pie"></mdb-icon>
           </a>
         </li>
         <!-- Dropdown -->
@@ -229,7 +229,16 @@
                 <td>{{item.user[0].name}}</td>
                 <td class="rating-td">
                   <div>
-                    <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+                    <div class="mt-2" fxLayout="row">
+                      <div class="mr-3 vote-up" fxLayout="row" fxLayoutAlign="start center">
+                        <mdb-icon class="mr-1" fas icon="thumbs-up"></mdb-icon> {{ item?.votes_up?.length || 0 }}
+                      </div>
+                      <div class="vote-down" fxLayout="row" fxLayoutAlign="start center" style="padding-top: 2px;">
+                        <mdb-icon class="mr-1" fas icon="thumbs-down"></mdb-icon> {{ item?.votes_down?.length || 0 }}
+                      </div>
+                    </div>
+
+                    <!-- <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating> -->
                   </div>
                 </td>
                 <td class="file-td">

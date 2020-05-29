@@ -49,8 +49,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InvitationComponent } from './pages/invitation/invitation.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-member.component';
+import { SecretaryDashboardComponent } from './pages/secretary-dashboard/secretary-dashboard.component';
+import { MeetingMemberComponent } from './pages/meeting-member/meeting-member.component';
+import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
+
 // import filepond module
 // firebase imports, omit what you don't need for your app
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,12 +69,15 @@ import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-mem
     LoadingComponent,
     MeetingComponent,
     TopicComponent,
+    PanMemberComponent,
     DashboardComponent,
     InvitationComponent,
     PanComponent,
     ChatBoxComponent,
     LoginPageComponent,
     DashboardMemberComponent,
+    SecretaryDashboardComponent,
+    MeetingMemberComponent,
   ],
   imports: [
     ChatModule,

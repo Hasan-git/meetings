@@ -7,6 +7,7 @@ export interface Topic {
   completed?: boolean;
   votes_up?: SelectedUser[];
   votes_down?: SelectedUser[];
+  votes_enabled?: boolean;
 }
 
 export interface SelectedUser {

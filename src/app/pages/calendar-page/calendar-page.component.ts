@@ -54,6 +54,7 @@ export class CalendarPageComponent {
     action: string;
     event: CalendarEvent;
   };
+  recurrent: boolean = false
 
   topics: Topic[] = []
 
@@ -274,6 +275,9 @@ export class CalendarPageComponent {
       this.filenames = [];
       this.selectedItems_Rooms = [];
       this.selectedItems_Users = [];
+      this.topics = [];
+      this.recurrent = false;
+
       Swal.fire('SUCCESS', 'New event added successfully')
 
       this.myHelper.getEventsFromCalendar().subscribe((result: CalendarEvent[]) => {
@@ -516,6 +520,7 @@ export class CalendarPageComponent {
       topic: '',
       votes_up: [],
       votes_down: [],
+      votes_enabled:true,
     })
   }
 

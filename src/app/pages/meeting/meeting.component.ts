@@ -15,12 +15,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class MeetingComponent implements OnInit {
 
+  // @ PAGES
+  homepage = true;
+  agenda = false;
+  thankYou = false;
+
   innerWidth: any;
 
   event: any
   title: string
-  homepage = true;
-  agenda = false;
   elapsed = 0;
   loading = true;
   activeTopic = {}
@@ -52,6 +55,13 @@ export class MeetingComponent implements OnInit {
   goHome() {
     this.homepage = true;
     this.agenda = false;
+    this.thankYou = false
+  }
+
+  endMeeting() {
+    this.homepage = false;
+    this.agenda = false;
+    this.thankYou = true
   }
 
   loadEvent() {

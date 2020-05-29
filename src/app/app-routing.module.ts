@@ -1,3 +1,4 @@
+import { SecretaryDashboardComponent } from './pages/secretary-dashboard/secretary-dashboard.component';
 import { MeetingComponent } from './pages/meeting/meeting.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +14,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InvitationComponent } from './pages/invitation/invitation.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-member.component';
+import { MeetingMemberComponent } from './pages/meeting-member/meeting-member.component';
 
 const routes: Routes = [
   // {
@@ -41,6 +43,9 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
+  },{
+    path: "secretary-dashboard",
+    component: SecretaryDashboardComponent
   },
   {
     path: 'calendar',
@@ -69,6 +74,10 @@ const routes: Routes = [
   {
     path: 'meeting/:title',
     component: MeetingComponent
+  },
+  {
+    path: 'meeting-member/:title',
+    component: MeetingMemberComponent
   },
   {
     path: '404', component: NotFoundComponent

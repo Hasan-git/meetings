@@ -149,3 +149,18 @@ table.table td {
 h4{
   font-size: 20px !important;
 }
+
+.vote-up {
+  font-weight: 400;
+  color: #4cc17e;
+}
+
+.vote-down {
+  font-weight: 400;
+  color: #c37878;
+}
+
+.vote-up *,
+.vote-down * {
+  font-size: 14px!important;
+}

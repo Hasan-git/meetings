@@ -29,11 +29,6 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item active waves-light" mdbWavesEffect [routerLink]="'/meeting'">
-          <a class="nav-link" mdbTooltip="In Room App" placement="bottom">
-            <mdb-icon fas icon="mobile"></mdb-icon>
-          </a>
-        </li>
         <!-- Dropdown -->
         <!-- <li class="nav-item dropdown active" dropdown>
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
@@ -81,16 +76,26 @@
         <div class="screen">
 
           <!-- Content goes here -->
+
+          <!-- LANDING -->
           <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;" *ngIf="homepage">
             <div class="spinner-grow text-success" role="status" [hidden]="!loading">
               <span class="sr-only">Loading...</span>
             </div>
             <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Start Meeting</button>
           </div>
+          <!-- / LANDING -->
+
+
+          <!-- THANK YOU -->
+          <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;" *ngIf="thankYou">
+            <h2 style="color: #00796b;  font-weight: 300;">Thank You!</h2>
+          </div>
+          <!-- / THANK YOU -->
 
           <div fxLayout="column" fxLayoutAlign="start start" style="height: 100%;overflow: auto;" *ngIf="agenda">
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;">
-              <button type="button" class="btn btn-secondary btn-sm">End Meeting</button>
+              <button (click)="endMeeting()" type="button" class="btn btn-secondary btn-sm">End Meeting</button>
               <div class="timer">
                 <mdb-icon fas icon="stopwatch mr-1"></mdb-icon>
                 {{elapsed}} m
