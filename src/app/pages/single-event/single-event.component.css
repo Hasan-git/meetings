@@ -161,3 +161,10 @@ table.table td {
 .vote-down * {
   font-size: 14px!important;
 }
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 1000px;
+    margin: 1.75rem auto;
+  }
+}

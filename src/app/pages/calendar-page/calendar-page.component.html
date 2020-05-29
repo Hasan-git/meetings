@@ -350,8 +350,8 @@
                             </td>
                             <td>
                               <div class="custom-control custom-checkbox vote_enabled">
-                                <input type="checkbox" class="custom-control-input" [(ngModel)]="topics[i].votes_enabled" id="customCheck" name="example1">
-                                <label class="custom-control-label" for="customCheck"></label>
+                                <input type="checkbox" class="custom-control-input" [(ngModel)]="topics[i].votes_enabled" [id]="'voteCheck'+i" name="example1">
+                                <label class="custom-control-label" [for]="'voteCheck'+i"></label>
                               </div>
                             </td>
                             <td class="topic-file-td">

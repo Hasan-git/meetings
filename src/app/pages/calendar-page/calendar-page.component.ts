@@ -250,6 +250,7 @@ export class CalendarPageComponent {
       var endtime = this.formatAMPM(this.endingDate)
       var endingdate = curr_year_end + "-" + curr_month_end + "-" + curr_date_end + " at " + endtime;
 
+
       // this.data.forEach(agenda=>{
       //   this.agenda+="Topic:"+agenda.id+"-Duration:"+agenda.name+"-Responsible:"+agenda.responsible+'<br />';
       // })
@@ -524,7 +525,7 @@ export class CalendarPageComponent {
       topic: '',
       votes_up: [],
       votes_down: [],
-      votes_enabled:true,
+      votes_enabled: true,
     })
   }
 

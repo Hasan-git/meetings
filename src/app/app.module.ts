@@ -67,11 +67,11 @@ import { NgxDocViewerModule } from 'ngx-doc-viewer';
     PanComponent,
     ChatBoxComponent,
     SecretaryDashboardComponent,
-    NgxDocViewerModule
   ],
   imports: [
     ChatModule,
     BarRatingModule,
+    NgxDocViewerModule,
     CountdownModule,
     BrowserModule,
     BrowserAnimationsModule,
