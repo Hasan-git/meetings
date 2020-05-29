@@ -8,7 +8,7 @@
     </mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item  waves-light" mdbWavesEffect [routerLink]="'/'">
+        <li class="nav-item  waves-light" mdbWavesEffect [routerLink]="'/home'">
           <a class="nav-link" mdbTooltip="Home" placement="bottom">
             <mdb-icon fas icon="home"></mdb-icon>
           </a>
@@ -82,10 +82,10 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="d-flex justify-content-between" *ngIf="myEvent">
-                <div>
-                  <span style="color: white" class="h1 text-uppercase"><strong>Event: </strong>{{myEvent.title}}</span>
+               <div>
+                  <span style="color: white;font-size: 25px !important;" class="h1 text-uppercase"><strong style="font-size: 25px !important;">Event: </strong>{{myEvent.title}}</span>
                   <br />
-                  <span style="cursor: pointer" [routerLink]="'/on-door-app/'+myEvent.meta.roomNumber.number" *ngIf="myEvent.meta" style="color: seashell" class="h4">{{myEvent.meta.roomNumber.name}}</span>
+                  <span style="cursor: pointer" [routerLink]="'/on-door-app/'+myEvent.meta.roomNumber.number" *ngIf="myEvent.meta" style="color: seashell" class="h4" style="color: white;font-size: 25px !important;">{{myEvent.meta.roomNumber.name}}</span>
                 </div>
                 <div *ngIf="(myEvent.start | amIsAfter:now:'minute') || (myEvent.start | amIsBefore:myEvent.end:'minute')"
                   class="d-flex flex-row-reverse">
@@ -207,8 +207,9 @@
     </div>
     <div class="col-sm-7">
       <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Agenda</h4>
+        <div class="card-body" fxLayout="row" fxLayoutAlign="space-between center">
+          <h4 class="card-title m-0">Agenda</h4>
+          <button type="button" class="btn btn-info btn-sm" [routerLink]="['/meeting',myEvent?.title]">Start Meeting</button>
         </div>
         <div class="p-2">
           <table class="table table-bordered">

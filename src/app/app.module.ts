@@ -1,3 +1,5 @@
+import { ChatBoxComponent } from './pages/meeting/chat-box/chat-box.component';
+import { PanComponent } from './pages/meeting/pan/pan.component';
 import { TopicComponent } from './pages/meeting/topic/topic.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -45,6 +47,8 @@ import { MyHelperService } from './services/my-helper.service';
 import { CountdownModule } from 'ngx-countdown';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InvitationComponent } from './pages/invitation/invitation.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-member.component';
 // import filepond module
 // firebase imports, omit what you don't need for your app
 @NgModule({
@@ -61,7 +65,11 @@ import { InvitationComponent } from './pages/invitation/invitation.component';
     MeetingComponent,
     TopicComponent,
     DashboardComponent,
-    InvitationComponent
+    InvitationComponent,
+    PanComponent,
+    ChatBoxComponent,
+    LoginPageComponent,
+    DashboardMemberComponent,
   ],
   imports: [
     ChatModule,

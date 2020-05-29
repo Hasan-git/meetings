@@ -11,6 +11,8 @@ import { OnDoorAppComponent } from './pages/on-door-app/on-door-app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InvitationComponent } from './pages/invitation/invitation.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-member.component';
 
 const routes: Routes = [
   // {
@@ -20,12 +22,25 @@ const routes: Routes = [
   // },
   {
     path: '',
+    component: LoginPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomePageComponent,
     pathMatch: 'full'
   },
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'dashboard-member',
+    component: DashboardMemberComponent
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent
   },
   {
     path: 'calendar',
@@ -52,7 +67,7 @@ const routes: Routes = [
     component: OnDoorAppComponent
   },
   {
-    path: 'meeting',
+    path: 'meeting/:title',
     component: MeetingComponent
   },
   {

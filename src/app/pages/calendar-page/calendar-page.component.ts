@@ -510,7 +510,12 @@ export class CalendarPageComponent {
   newTopic() {
     this.topics.push({
       id: utils.GenerateObjectId(),
-      user: []
+      user: [],
+      completed: false,
+      duration: 5,
+      topic: '',
+      votes_up: [],
+      votes_down: [],
     })
   }
 
