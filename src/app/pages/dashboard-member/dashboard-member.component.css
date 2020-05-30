@@ -10950,6 +10950,15 @@ pre {
   transform: translateX(4px);
   cursor: pointer;
 }
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem !important;
+  line-height: inherit;
+  white-space: nowrap;
+}
 .card__source {
   line-height: 1.8;
   color: #1bbae1;

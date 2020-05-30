@@ -3,11 +3,11 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, SimpleChange
 import { CountdownConfig, CountdownComponent } from 'ngx-countdown';
 
 @Component({
-  selector: 'app-topic',
+  selector: 'app-topic-member',
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.scss']
 })
-export class TopicComponent implements OnInit {
+export class TopicMemberComponent implements OnInit {
 
   @Input('topic') topic: Topic;
 

@@ -14,11 +14,11 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/meeting-member/31'">
+        <!-- <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/meeting-member/31'">
           <a class="nav-link" mdbTooltip="Calendar" placement="bottom">
             <mdb-icon fas icon="users"></mdb-icon>
           </a>
-        </li>
+        </li> -->
         <!-- Dropdown -->
         <!-- <li class="nav-item dropdown active" dropdown>
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
@@ -72,7 +72,7 @@
             <div class="spinner-grow text-success" role="status" [hidden]="!loading">
               <span class="sr-only">Loading...</span>
             </div>
-            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Start Meeting</button>
+            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Enter Meeting</button>
           </div>
           <!-- / LANDING -->
 
@@ -107,17 +107,17 @@
 
               <div style="width: 100%;" fxFlex="calc(60% - 15px)">
                 <ng-container *ngFor="let topic of event?.topics">
-                  <app-topic [topic]="topic" [activeTopicId]="event.activeTopicId" ></app-topic>
+                  <app-topic-member [topic]="topic" [activeTopicId]="event.activeTopicId" ></app-topic-member>
                 </ng-container>
               </div>
 
               <div class="pan" fxFlex="calc(40% - 15px)">
-                <app-pan-member [topic]="activeTopic" [eventTitle]="event.title"></app-pan-member>
+                <app-pan-member [topic]="activeTopic" [event]="event"></app-pan-member>
               </div>
             </div>
 
             <div fxLayout="row" fxLayoutGap="15px" style="width: 100%;" class="p-3">
-              <app-chat-box [users]="event.meta.users" style="width: 100%;"></app-chat-box>
+              <app-chat-box-member [users]="event.meta.users" style="width: 100%;"></app-chat-box-member>
             </div>
 
           </div>

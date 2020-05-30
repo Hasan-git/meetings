@@ -1,6 +1,3 @@
-* {
-  font-size: 15px;
-}
 
 .rounded-button {
   border-radius: 50%;
@@ -148,4 +145,13 @@ table.table td {
 }
 h4{
   font-size: 20px !important;
+}
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem !important;
+  line-height: inherit;
+  white-space: nowrap;
 }

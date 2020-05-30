@@ -11,7 +11,7 @@ import { Topic } from 'src/app/blocks/interface/topic';
 export class PanMemberComponent implements OnInit {
 
   @Input() topic: Topic;
-  @Input() eventTitle:any;
+  @Input() event:any;
   Invotesupcheck:boolean=true;
   Invotesdowncheck:boolean=true;
   public a:any;
@@ -32,11 +32,10 @@ export class PanMemberComponent implements OnInit {
     }
     this.a='votedup';
     this.topic.votes_up.push({id:554,name:'Mike Ross'});
-    this.array.push()
-    this.db.collection('MyEvents').doc(this.eventTitle).update({
-      topics:this.topic
+    this.event.topics[0]=this.topic;
+    this.db.collection('MyEvents').doc(this.event.title).update({
+      topics:this.event.topics
     });
-
   }
   votedown(){
     if(this.a||this.b){
@@ -44,9 +43,10 @@ export class PanMemberComponent implements OnInit {
     }
     this.b='voteddown';
     this.topic.votes_down.push({id:554,name:'Mike Ross'});
-    // this.db.collection('MyEvents').doc(this.eventTitle).update({
-    //   topics:this.topic
-    // });
+    this.event.topics[0]=this.topic;
+    this.db.collection('MyEvents').doc(this.event.title).update({
+      topics:this.event.topics
+    });
   }
 
 }

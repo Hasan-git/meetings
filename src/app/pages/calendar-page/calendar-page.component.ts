@@ -251,7 +251,7 @@ export class CalendarPageComponent {
 
 
       const body={
-        email:"yahya.abihaidar98@gmail.com",
+        email:"m.farah@everteam-gs.com",
         event_name:this.eventName,
         event_start_date:startingdate,
         event_agenda:this.agenda,
@@ -263,7 +263,6 @@ export class CalendarPageComponent {
        this.sendMail(body).then((res) => {
         //  console.log(res);
        });
-
       this.db.collection('MyEvents').doc(eventToSave.title).set(eventToSave);
 
       // this.myHelper.saveEventToLocal(eventToSave);
@@ -408,6 +407,7 @@ export class CalendarPageComponent {
       this.dropdownList_Users.forEach(elem => {
         elem.dob = new Date(elem.dob);
       })
+
     })
 
     this.myHelper.getEventsFromCalendar().subscribe((result: CalendarEvent[]) => {
@@ -439,7 +439,7 @@ export class CalendarPageComponent {
 
     }
     else {
-      this.selectedItems_Users = [];
+      this.selectedItems_Users.push(MyUsers[item.id]);
     }
     //console.log(item);
     // if (item.id === 1 || item.id === 4 || item.id === 10) {
@@ -520,7 +520,7 @@ export class CalendarPageComponent {
       topic: '',
       votes_up: [],
       votes_down: [],
-      votes_enabled:true,
+      votes_enabled: true,
     })
   }
 

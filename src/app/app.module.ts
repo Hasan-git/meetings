@@ -1,3 +1,5 @@
+import { ChatBoxMemberComponent } from './pages/meeting-member/chat-box/chat-box.component';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { ChatBoxComponent } from './pages/meeting/chat-box/chat-box.component';
 import { PanComponent } from './pages/meeting/pan/pan.component';
 import { TopicComponent } from './pages/meeting/topic/topic.component';
@@ -24,7 +26,6 @@ import { GaugeChartModule } from 'angular-gauge-chart';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { ChartsModule } from 'ng2-charts';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FilePondModule } from 'ngx-filepond';
 import { MomentModule } from 'ngx-moment';
@@ -52,6 +53,8 @@ import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-mem
 import { SecretaryDashboardComponent } from './pages/secretary-dashboard/secretary-dashboard.component';
 import { MeetingMemberComponent } from './pages/meeting-member/meeting-member.component';
 import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
+import { TopicMemberComponent } from './pages/meeting-member/topic/topic.component';
+import { UploadService } from './services/shared/upload.service';
 
 // import filepond module
 // firebase imports, omit what you don't need for your app
@@ -67,6 +70,8 @@ import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
     InRoomAppComponent,
     NotFoundComponent,
     LoadingComponent,
+    ChatBoxMemberComponent,
+    TopicMemberComponent,
     MeetingComponent,
     TopicComponent,
     PanMemberComponent,
@@ -82,6 +87,7 @@ import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
   imports: [
     ChatModule,
     BarRatingModule,
+    NgxDocViewerModule,
     CountdownModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -97,7 +103,6 @@ import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
     DataTablesModule,
     NgbModule,
     FormsModule,
-    Ng2SmartTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
@@ -119,7 +124,7 @@ import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
     ChartsModule,
     FlexLayoutModule,
   ],
-  providers: [MyHelperService, AngularFirestore, { provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [MyHelperService,UploadService,AngularFirestore,CountdownModule, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

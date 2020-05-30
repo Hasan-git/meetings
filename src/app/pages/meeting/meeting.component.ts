@@ -1,7 +1,7 @@
 import { map } from 'rxjs/operators';
 import { Topic } from './../../blocks/interface/topic';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 import { CountdownComponent } from 'ngx-countdown';
@@ -14,6 +14,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./meeting.component.scss']
 })
 export class MeetingComponent implements OnInit {
+
+  @ViewChild('documentModal', { static: true }) documentModal: TemplateRef<any>;
+
+  viewer = 'google';
+  selectedType = 'pptx'; //'docx';
+  doc = 'https://files.fm/down.php?i=sdymh2y6';
 
   // @ PAGES
   homepage = true;
@@ -39,6 +45,10 @@ export class MeetingComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+  }
+
+  onOpenDocument(event) {
+    (this.documentModal as any).show()
   }
 
   startMeeting() {

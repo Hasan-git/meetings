@@ -322,7 +322,9 @@ export class InvitationComponent implements OnInit {
       }
     })
   }
+  rejectbtn(){
 
+  }
 
   onToggleChat() {
     this.chatComponent.toggle()

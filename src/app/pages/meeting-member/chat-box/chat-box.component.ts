@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-chat-box',
+  selector: 'app-chat-box-member',
   templateUrl: './chat-box.component.html',
   styleUrls: ['./chat-box.component.css']
 })
-export class ChatBoxComponent implements OnInit {
+export class ChatBoxMemberComponent implements OnInit {
 
   @Input() users: any[]
   messeges = [

@@ -22,6 +22,8 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView,
 } from 'angular-calendar';
+import { MyHelperService } from 'src/app/services/my-helper.service';
+import { Router } from '@angular/router';
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -74,50 +76,11 @@ export class DashboardMemberComponent {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true,
-      },
-      draggable: true,
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions,
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true,
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true,
-      },
-      draggable: true,
-    },
-  ];
+  events: CalendarEvent[] = [];
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal,private myHelper: MyHelperService,private router: Router) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -153,7 +116,24 @@ export class DashboardMemberComponent {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    //console.log(action)
+    //console.log(event)
+    if (action == 'Clicked') {
+      // Swal.fire(event.title,'Start: ' +event.start);
+      this.router.navigateByUrl('meeting-member/' + event.title);
+    }
+  }
+  ngOnInit(): void {
+
+    this.myHelper.getEventsFromCalendar().subscribe((result: CalendarEvent[]) => {
+      this.events = result;
+      this.events.forEach(elem => {
+        elem.start = new Date(elem.start)
+        elem.end = new Date(elem.end)
+      })
+
+    })
+
   }
 
   addEvent(): void {

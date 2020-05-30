@@ -15,6 +15,10 @@ import { ChatComponent } from 'src/app/blocks/reusable-components/chat/chat.comp
 export class SingleEventComponent implements OnInit {
 
   @ViewChild('chat', { static: false }) chatComponent: ChatComponent;
+  viewer = 'google';
+  selectedType = 'pptx'; //'docx';
+  doc = 'https://files.fm/down.php?i=sdymh2y6';
+
   myEvent: any;
   public backgroundimage = "../../../assets/img/5812.jpg";
   public pptimage = "./assets/img/ppt.png";
