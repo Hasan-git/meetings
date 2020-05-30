@@ -18,7 +18,7 @@ export class InvitationComponent implements OnInit {
   myEvent: any;
   closeResult = '';
   public backgroundimage = "../../../assets/img/5812.jpg";
-  public pptimage = "./assets/img/ppt.png";
+  public pptimage = "~/assets/img/ppt.png";
   room: any;
   users: any[] = [];
   totalUsersToAdd: any[] = [];

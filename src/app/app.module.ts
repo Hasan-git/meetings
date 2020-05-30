@@ -45,7 +45,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { OnDoorAppComponent } from './pages/on-door-app/on-door-app.component';
 import { SingleEventComponent } from './pages/single-event/single-event.component';
 import { MyHelperService } from './services/my-helper.service';
-import { CountdownModule } from 'ngx-countdown';
+import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InvitationComponent } from './pages/invitation/invitation.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
@@ -56,6 +56,9 @@ import { PanMemberComponent } from './pages/meeting-member/pan/pan.component';
 import { TopicMemberComponent } from './pages/meeting-member/topic/topic.component';
 import { UploadService } from './services/shared/upload.service';
 
+function countdownConfigFactory() {
+  return { format: `mm` };
+}
 // import filepond module
 // firebase imports, omit what you don't need for your app
 
@@ -124,7 +127,12 @@ import { UploadService } from './services/shared/upload.service';
     ChartsModule,
     FlexLayoutModule,
   ],
-  providers: [MyHelperService,UploadService,AngularFirestore,CountdownModule, { provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [
+    MyHelperService,
+    AngularFirestore,
+    CountdownGlobalConfig,
+    // {provide: CountdownGlobalConfig, useFactory: countdownConfigFactory},
+     { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

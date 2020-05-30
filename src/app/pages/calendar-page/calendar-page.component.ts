@@ -518,8 +518,13 @@ export class CalendarPageComponent {
       completed: false,
       duration: 5,
       topic: '',
-      votes_up: [],
-      votes_down: [],
+      votes_up: [
+        {id:435,name:'Yahya'},
+        {id:765,name:'Mazen'}
+      ],
+      votes_down: [
+        {id:653,name:'Hassan'}
+      ],
       votes_enabled: true,
     })
   }
