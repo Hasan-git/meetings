@@ -279,7 +279,7 @@ export class CalendarPageComponent {
       this.topics = [];
       this.recurrent = false;
 
-      Swal.fire('SUCCESS', 'New event added successfully')
+      Swal.fire('SUCCESS', 'Meeting added successfully.')
 
       this.myHelper.getEventsFromCalendar().subscribe((result: CalendarEvent[]) => {
         this.events = result;

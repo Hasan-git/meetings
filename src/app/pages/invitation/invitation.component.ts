@@ -24,7 +24,7 @@ export class InvitationComponent implements OnInit {
   totalUsersToAdd: any[] = [];
   now: any = new Date();
   topics: Topic[] = []
-  rate= 4;
+  rate = 4;
   data = [];
   settings = {
     columns: {
@@ -169,8 +169,8 @@ export class InvitationComponent implements OnInit {
     let randomNumber: number = Math.floor(Math.random() * 15) + 1;
     return randomNumber;
   }
-  acceptbtn(){
-
+  acceptbtn() {
+    Swal.fire('SUCCESS', 'Invitation accepted successfully.').then(_ => this.router.navigate(['/dashboard-member']))
   }
 
   Vote(id) {
@@ -259,7 +259,7 @@ export class InvitationComponent implements OnInit {
     });
   }
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -322,7 +322,7 @@ export class InvitationComponent implements OnInit {
       }
     })
   }
-  rejectbtn(){
+  rejectbtn() {
 
   }
 

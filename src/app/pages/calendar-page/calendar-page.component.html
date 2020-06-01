@@ -287,6 +287,7 @@
                           <option>Daily</option>
                           <option>Weekly</option>
                           <option>Monthly</option>
+                          <option>Annually</option>
                         </select>
                       </div>
                     </div>
@@ -332,8 +333,10 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let item of topics;  index as i">
-                            <td><input class="form-control" placeholder="Topic" [(ngModel)]="topics[i].topic"> </td>
-                            <td>
+                            <td style="min-width: 300px;max-width: 300px;">
+                              <input class="form-control" placeholder="Topic" [(ngModel)]="topics[i].topic">
+                            </td>
+                            <td style="min-width: 120px;max-width: 120px;">
                               <div class="input-group">
                                 <input class="form-control" placeholder="Duration" [(ngModel)]="topics[i].duration">
                                 <div class="input-group-prepend">
@@ -341,7 +344,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td style="min-width: 300px;max-width: 300px;">
+                            <td style="min-width: 250px;max-width: 250px;">
                               <ng-multiselect-dropdown style="min-width: 300px;" [placeholder]="'Users'" [data]="dropdownList_Users"
                                 [(ngModel)]="topics[i].user" [settings]="dropdownSettings_Users_Single"
                                 (onSelect)="onItemSelectUser($event)">

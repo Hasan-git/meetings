@@ -137,7 +137,7 @@ table.table td {
 }
 
 .rating-td {
-  padding: 0 !important;
+  /* padding: 0 !important; */
 }
 
 .rating-td>div {
@@ -153,11 +153,13 @@ h4{
 .vote-up {
   font-weight: 400;
   color: #4cc17e;
+  font-size: 16px;
 }
 
 .vote-down {
   font-weight: 400;
   color: #c37878;
+  font-size: 16px;
 }
 
 .vote-up *,

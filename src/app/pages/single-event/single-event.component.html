@@ -82,7 +82,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="d-flex justify-content-between" *ngIf="myEvent">
-               <div>
+                <div>
                   <span style="color: white;font-size: 25px !important;" class="h1 text-uppercase"><strong style="font-size: 25px !important;">Event: </strong>{{myEvent.title}}</span>
                   <br />
                   <span style="cursor: pointer" [routerLink]="'/on-door-app/'+myEvent.meta.roomNumber.number" *ngIf="myEvent.meta" style="color: seashell" class="h4" style="color: white;font-size: 25px !important;">{{myEvent.meta.roomNumber.name}}</span>
@@ -209,7 +209,7 @@
       <div class="card">
         <div class="card-body" fxLayout="row" fxLayoutAlign="space-between center">
           <h4 class="card-title m-0">Agenda</h4>
-          <button type="button" class="btn btn-info btn-sm" [routerLink]="['/meeting',myEvent?.title]">Start Meeting</button>
+          <button type="button" class="btn btn-info btn-sm" [routerLink]="['/meeting',myEvent?.title]">Enter Meeting</button>
         </div>
         <div class="p-2">
           <table class="table table-bordered">
@@ -224,17 +224,19 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of topics;  index as i">
-                <td class="text-capitalize">{{item.topic}}</td>
+                <td style="max-width: 180px;" class="text-capitalize">{{item.topic}}</td>
                 <td>{{item.duration}}</td>
                 <td>{{item.user[0].name}}</td>
                 <td class="rating-td">
                   <div>
                     <div class="mt-2" fxLayout="row">
-                      <div class="mr-3 vote-up" fxLayout="row" fxLayoutAlign="start center">
-                        <mdb-icon class="mr-1" fas icon="thumbs-up"></mdb-icon> {{ item?.votes_up?.length || 0 }}
+                      <div style="margin-right: 10px;" class="vote-up" fxLayout="row" fxLayoutAlign="start center">
+                        <mdb-icon style="margin-right: 3px; font-size: 12px;" fas icon="check"></mdb-icon>
+                        <div> {{ item?.votes_up?.length || 0 }}</div>
                       </div>
                       <div class="vote-down" fxLayout="row" fxLayoutAlign="start center" style="padding-top: 2px;">
-                        <mdb-icon class="mr-1" fas icon="thumbs-down"></mdb-icon> {{ item?.votes_down?.length || 0 }}
+                        <mdb-icon style="margin-right: 3px;font-size: 14px;" fas icon="times"></mdb-icon>
+                        <div>{{ item?.votes_down?.length || 0 }}</div>
                       </div>
                     </div>
 
@@ -327,7 +329,7 @@
   role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" >
+      <div class="modal-header">
         <button type="button" class="close pull-right" aria-label="Close" (click)="documentModal.hide()">
           <span aria-hidden="true" style="font-size: 27px!important;">×</span>
         </button>

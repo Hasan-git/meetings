@@ -15,12 +15,15 @@
   <div class="owner-name">{{topic.user[0].name}}</div>
 </div>
 
-<div class="mt-2" fxLayout="row">
+<div class="mt-2" fxLayout="row" fxLayoutAlign="start start">
+  <div class="owner-label mt-0">Voting:</div>
   <div class="mr-3 vote-up" fxLayout="row" fxLayoutAlign="start center">
-    <mdb-icon class="mr-1" fas icon="thumbs-up"></mdb-icon> {{ topic?.votes_up?.length || 0 }}
+    <mdb-icon style="margin-right: 3px; font-size: 14px;" class="" fas icon="check"></mdb-icon>
+    <div>{{ topic?.votes_up?.length || 0 }}</div>
   </div>
   <div class="vote-down" fxLayout="row" fxLayoutAlign="start center" style="padding-top: 2px;">
-    <mdb-icon class="mr-1" fas icon="thumbs-down"></mdb-icon> {{ topic?.votes_down?.length || 0 }}
+    <mdb-icon class="" fas icon="times"></mdb-icon>
+    <div>{{ topic?.votes_down?.length || 0 }}</div>
   </div>
 
   <div style="margin-left: auto; font-size: 20px;  color: #686868;">
@@ -28,4 +31,3 @@
   </div>
 
 </div>
-

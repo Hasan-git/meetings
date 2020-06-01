@@ -72,7 +72,7 @@
             <div class="spinner-grow text-success" role="status" [hidden]="!loading">
               <span class="sr-only">Loading...</span>
             </div>
-            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Enter Meeting</button>
+            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Start Meeting</button>
           </div>
           <!-- / LANDING -->
 
@@ -86,10 +86,10 @@
           <div fxLayout="column" fxLayoutAlign="start start" style="height: 100%;overflow: auto;" *ngIf="agenda">
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;margin-top: 2%;">
               <!-- <button (click)="endMeeting()" type="button" class="btn btn-secondary btn-sm">End Meeting</button> -->
-              <a dropdownToggle class="nav-link user p-0 mr-4" href="javascript:void(0);">
-              <img src="http://emilcarlsson.se/assets/mikeross.png" class="user-img rounded-circle z-depth-0"
-              alt="avatar image" height="35" mdbWavesEffect>
-            </a>
+              <a dropdownToggle class="nav-link user p-0 mr-4" href="javascript:void(0);" style="position: absolute;  right: 10px;">
+                <img src="http://emilcarlsson.se/assets/mikeross.png" class="user-img rounded-circle z-depth-0"
+                  alt="avatar image" style="height: 40px;" mdbWavesEffect>
+              </a>
               <div class="timer">
                 <mdb-icon fas icon="stopwatch mr-1"></mdb-icon>
                 {{elapsed}} m
@@ -107,7 +107,7 @@
 
               <div style="width: 100%;" fxFlex="calc(60% - 15px)">
                 <ng-container *ngFor="let topic of event?.topics">
-                  <app-topic-member [topic]="topic" [activeTopicId]="event.activeTopicId" ></app-topic-member>
+                  <app-topic-member [topic]="topic" [activeTopicId]="event.activeTopicId"></app-topic-member>
                 </ng-container>
               </div>
 
