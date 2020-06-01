@@ -170,7 +170,7 @@ export class InvitationComponent implements OnInit {
     return randomNumber;
   }
   acceptbtn() {
-    Swal.fire('SUCCESS', 'Invitation accepted successfully.').then(_ => this.router.navigate(['/dashboard-member']))
+    Swal.fire('SUCCESS', 'Meeting accepted successfully.').then(_ => this.router.navigate(['/dashboard-member']))
   }
 
   Vote(id) {

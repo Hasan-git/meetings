@@ -253,7 +253,7 @@ export class CalendarPageComponent {
 
 
       const body={
-        email:"m.farah@everteam-gs.com",
+        email:"yahya.abihaidar98@gmail.com",
         event_name:this.eventName,
         event_start_date:startingdate,
         event_agenda:this.agenda,

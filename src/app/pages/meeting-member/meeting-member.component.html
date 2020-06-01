@@ -72,7 +72,7 @@
             <div class="spinner-grow text-success" role="status" [hidden]="!loading">
               <span class="sr-only">Loading...</span>
             </div>
-            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Start Meeting</button>
+            <button type="button" class="btn btn-secondary" (click)="startMeeting()" [hidden]="loading">Enter Meeting</button>
           </div>
           <!-- / LANDING -->
 
@@ -124,6 +124,31 @@
 
         </div>
         <div class="home" (click)="goHome()" style="cursor: pointer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="overflow-y: auto" mdbModal #documentModal="mdbModal" class="modal fade bottom" tabindex="-1"
+  role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="documentModal.hide()">
+          <span aria-hidden="true" style="font-size: 27px!important;">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel" style="font-size: 20px!important;">Presentation</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <ngx-doc-viewer [url]="doc" [viewer]="viewer" style="width:100%;height:80vh;"></ngx-doc-viewer>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close"
+          (click)="documentModal.hide()" mdbWavesEffect>Close</button>
       </div>
     </div>
   </div>

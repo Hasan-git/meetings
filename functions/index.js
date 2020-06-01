@@ -132,17 +132,6 @@ exports.sendMail = functions.https.onRequest((req, res) => {
                                                 width="580">
                                                     <tbody>
                                                         <tr>
-                                                            <td>
-                                                                <a href=
-                                                                "http://get.invisionapp.com/e1t/c/*W8q197m87bTZDW3GQmLK13hZky0/*W13K2W41sYqvmN3D1Zp-wdFZ00/5/f18dQhb0Sq5v8Y9-zHW70BpRg4T_wzgW64zw9H1q7sY6MscWgjXD6prW39DrXV26p8nbW5CR6n97cVKJwW50lYRv7nwMJHW2JZL_31xqJy3VYnPL76Qj-05W5DHNj65CRgMyW5CqxQZ2m3jxNW7dcWxp7dF4v9W1nrCGB51LTg5N2lklC6dVkfWW5t9bL01bMSdCW7JCxGl81bhDKW7N_KqM12CJpdW3VKVtL6mGW-jW7PZWjr6pzHWBW7bnnc_7fKqQcW94q7cq6VKJl2W1hC_8g5lppF5W2D-4Yc52QNf_W2m2rxK5p59FbW5RS7T25TtbXWW5D7H8S3vhVZgW3C61pK6z1LZmW5PHRKY3shL5DW4LjDF06gJdtwW47Z6Xs3JQNrfW3r_Q0M6-9Cf3W3Ygcw64wwzDBW48fZ1n6dtfCzW4pcD4v82G-VBN8yRbpjrPpMvVrJh2D5bVWMXW2yqJMJ3gqrMyW69NJRJ4qTk1qW3Pdvn34J35SnW2N3wzQ9c5f97W1CrJJj7gZNh5W87C4Bf16q663W3zxJ4g3FW2hmN3hGm6lrKGtgW5kBqs23X6Vls0"
-                                                                target="_blank"><img src=
-                                                                "https://i.ibb.co/6Jk8sDB/5812.jpg"
-                                                                style=
-                                                                "border:0;max-width:100%!important"
-                                                                width="580" height="400"></a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
@@ -182,7 +171,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
                                                                             <td align=
                                                                             "center" style=
                                                                             "font-family:'Open Sans',arial,sans-serif!important;font-size:16px!important;line-height:30px!important;font-weight:400!important;color:#7e8890!important">
-                                                                            Event Location: ${data.event_location}<br>Invitees: ${data.event_invitees}</td>
+                                                                            <b>Event Location:</b> ${data.event_location}<br><b>Invitees:</b> ${data.event_invitees}</td>
                                                                         </tr>
                                                                         <tr>
                                                                         <td align=
@@ -212,13 +201,13 @@ exports.sendMail = functions.https.onRequest((req, res) => {
                                                                                 <a href=
                                                                                 "https://presales-etgs.com/demo/everteam.meeting/#/invitation/${data.event_name}"
                                                                                 style=
-                                                                                "background-color:#00796B;padding:14px 28px 14px 28px;border-radius:3px;line-height:18px!important;letter-spacing:0.125em;text-transform:uppercase;font-size:13px;font-family:'Open Sans',Arial,sans-serif;font-weight:400;color:#ffffff;text-decoration:none;display:inline-block;line-height:18px!important"
+                                                                                "background-color:#00AE8D;padding:14px 28px 14px 28px;border-radius:3px;line-height:18px!important;letter-spacing:0.125em;text-transform:uppercase;font-size:13px;font-family:'Open Sans',Arial,sans-serif;font-weight:400;color:#ffffff;text-decoration:none;display:inline-block;line-height:18px!important"
                                                                                 target=
                                                                                 "_blank">Confirm</a>
                                                                                 <a href=
                                                                                 "https://presales-etgs.com/demo/everteam.meeting/#/invitation/${data.event_name}"
                                                                                 style=
-                                                                                "background-color:#921A24;padding:14px 28px 14px 28px;border-radius:3px;line-height:18px!important;letter-spacing:0.125em;text-transform:uppercase;font-size:13px;font-family:'Open Sans',Arial,sans-serif;font-weight:400;color:#ffffff;text-decoration:none;display:inline-block;line-height:18px!important"
+                                                                                "background-color:#DC3545;padding:14px 28px 14px 28px;border-radius:3px;line-height:18px!important;letter-spacing:0.125em;text-transform:uppercase;font-size:13px;font-family:'Open Sans',Arial,sans-serif;font-weight:400;color:#ffffff;text-decoration:none;display:inline-block;line-height:18px!important"
                                                                                 target=
                                                                                 "_blank">Decline</a>
                                                                             </td>

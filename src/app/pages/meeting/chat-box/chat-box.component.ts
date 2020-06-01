@@ -9,16 +9,14 @@ export class ChatBoxComponent implements OnInit {
 
   @Input() users: any[]
   messeges = [
-    'You just got LITT up, Mike.',
-    'Wrong. You take the gun, or you pull out a bigger one. ',
-    'I was thinking that we could have chicken tonight, sounds good?',
-    'I know everything! Im Donna..',
-    'Have you finished the draft on the Hinsenburg deal?',
+    'The first topic is very important we should discuss it',
+    'were you able to download the presentation? ',
+    'Do you think all will attend this weekly meeting?',
     'Thanks! :)',
-    "We'll meet again, Mike. Tell Jessica I said 'Hi'",
-    "I've sent you the files for the Garrett trial.",
-    "This isn't over",
-    "This deal is solid.",
+    "I have sent the files for the weekly meeting",
+    'This meeting is very important',
+    'I will share my notes',
+    "Have you finished the mom of the Last meeting",
   ]
   constructor() { }
 

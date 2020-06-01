@@ -1,6 +1,6 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { SelectedUser } from './../../../blocks/interface/topic';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Topic } from 'src/app/blocks/interface/topic';
 
 @Component({
@@ -17,6 +17,10 @@ export class PanMemberComponent implements OnInit {
   public a:any;
   public b:any;
   array:any;
+  @Output() openDocument = new EventEmitter();
+  viewer = 'google';
+  selectedType = 'pptx'; //'docx';
+  doc = 'https://files.fm/down.php?i=sdymh2y6';
 
   constructor(public db: AngularFirestore) { }
 
@@ -25,6 +29,9 @@ export class PanMemberComponent implements OnInit {
     this.a=this.topic.votes_up.find((user:SelectedUser)=>user.id==554);
     this.b=this.topic.votes_down.find((user:SelectedUser)=>user.id==554);
 
+  }
+  onOpenDocument() {
+    this.openDocument.emit(Math.random())
   }
   voteup(){
     if(this.b||this.a){
