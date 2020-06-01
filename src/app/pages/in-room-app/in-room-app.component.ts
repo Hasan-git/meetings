@@ -105,7 +105,7 @@ export class InRoomAppComponent implements OnInit {
     let timerInterval
     let imageSource:string="";
     if(environment.production){
-      imageSource="./assets/img/emergency_exit.png";
+      imageSource="~/assets/img/emergency_exit.png";
     }else{
       imageSource="../../../assets/img/emergency_exit.png";
     }
@@ -152,7 +152,7 @@ export class InRoomAppComponent implements OnInit {
         <label><input id="swal-input4" type="checkbox" value="3.5mm Audio" /> 3.5mm Audio</label>
         <label><input id="swal-input5" type="checkbox" value="USB" /> USB</label>
         <label><input id="swal-input6" type="checkbox" value="Adapter" /> Adapter</label>
-        </p>  
+        </p>
         `,
       confirmButtonText: 'Submit',
       focusConfirm: false,

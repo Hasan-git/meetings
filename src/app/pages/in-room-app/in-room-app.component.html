@@ -8,7 +8,7 @@
     </mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/'">
+        <li class="nav-item waves-light" mdbWavesEffect [routerLink]="'/home'">
           <a class="nav-link" mdbTooltip="Home" placement="bottom">
             <mdb-icon fas icon="home"></mdb-icon>
           </a>
@@ -81,7 +81,7 @@
         <div class="screen">
           <!-- Content goes here -->
           <div class="d-flex align-content-lg-stretch flex-wrap">
-            <!-- <img src="../../../assets/img/door_room.jpg" style="max-width: 100%;" alt=""> -->
+            <!-- <img src="assets/img/door_room.jpg" style="max-width: 100%;" alt=""> -->
             <div *ngIf="showHome" class="animated zoomIn w-100">
               <div class="d-flex justify-content-around big-box ">
                 <button (click)="goSupport()" type="button" mdbBtn color="elegant" mdbWavesEffect

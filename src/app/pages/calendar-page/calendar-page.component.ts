@@ -213,7 +213,6 @@ export class CalendarPageComponent {
         start: new Date(this.startingDate).toISOString(),
         end: new Date(this.endingDate).toISOString(),
         title: this.eventName,
-        data: this.data,
         topics: this.topics,
         truevotes: [],
         falsevotes: [],
@@ -230,12 +229,8 @@ export class CalendarPageComponent {
         }
       };
 
-      this.selectedItems_Users.forEach(user => {
-        user.voted = '';
-        // this.myHelper.getUserById(user.id).subscribe((res:any)=>{
-        //   this.string+=res[0].name+',';
-
-        //  });
+      this.topics.forEach(user => {
+          this.string+=user.user[0].name+',';
       })
 
 
@@ -252,25 +247,24 @@ export class CalendarPageComponent {
       var endtime = this.formatAMPM(this.endingDate)
       var endingdate = curr_year_end + "-" + curr_month_end + "-" + curr_date_end + " at " + endtime;
 
+      this.topics.forEach(agenda=>{
+        this.agenda+="Topic:"+agenda.topic+"-Duration:"+agenda.duration+"-Owner:"+agenda.user[0].name+'<br />';
+      })
 
-      // this.data.forEach(agenda=>{
-      //   this.agenda+="Topic:"+agenda.id+"-Duration:"+agenda.name+"-Responsible:"+agenda.responsible+'<br />';
-      // })
 
-      // const body={
-      //   yahyaemail:"yahya.abihaidar98@gmail.com",
-      //   event_name:this.eventName,
-      //   event_start_date:startingdate,
-      //   event_agenda:this.agenda,
-      //   event_location:this.selectedItems_Rooms[0].name,
-      //   event_invitees:this.string,
-      //   event_end_date:endingdate
-      // }
+      const body={
+        email:"m.farah@everteam-gs.com",
+        event_name:this.eventName,
+        event_start_date:startingdate,
+        event_agenda:this.agenda,
+        event_location:this.selectedItems_Rooms[0].name,
+        event_invitees:this.string,
+        event_end_date:endingdate
+      }
 
-      //  this.sendMail(body).then((res) => {
-      //   //  console.log(res);
-      //  });
-
+       this.sendMail(body).then((res) => {
+        //  console.log(res);
+       });
       this.db.collection('MyEvents').doc(eventToSave.title).set(eventToSave);
 
       // this.myHelper.saveEventToLocal(eventToSave);
@@ -415,6 +409,7 @@ export class CalendarPageComponent {
       this.dropdownList_Users.forEach(elem => {
         elem.dob = new Date(elem.dob);
       })
+
     })
 
     this.myHelper.getEventsFromCalendar().subscribe((result: CalendarEvent[]) => {
@@ -446,7 +441,7 @@ export class CalendarPageComponent {
 
     }
     else {
-      this.selectedItems_Users = [];
+      this.selectedItems_Users.push(MyUsers[item.id]);
     }
     //console.log(item);
     // if (item.id === 1 || item.id === 4 || item.id === 10) {
@@ -525,8 +520,13 @@ export class CalendarPageComponent {
       completed: false,
       duration: 5,
       topic: '',
-      votes_up: [],
-      votes_down: [],
+      votes_up: [
+        {id:435,name:'Yahya'},
+        {id:765,name:'Mazen'}
+      ],
+      votes_down: [
+        {id:653,name:'Hassan'}
+      ],
       votes_enabled: true,
     })
   }

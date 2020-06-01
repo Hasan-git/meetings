@@ -10,6 +10,11 @@ import { AddressBookComponent } from './pages/address-book/address-book.componen
 import { InRoomAppComponent } from './pages/in-room-app/in-room-app.component';
 import { OnDoorAppComponent } from './pages/on-door-app/on-door-app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { InvitationComponent } from './pages/invitation/invitation.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { DashboardMemberComponent } from './pages/dashboard-member/dashboard-member.component';
+import { MeetingMemberComponent } from './pages/meeting-member/meeting-member.component';
 
 const routes: Routes = [
   // {
@@ -19,10 +24,26 @@ const routes: Routes = [
   // },
   {
     path: '',
+    component: LoginPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomePageComponent,
     pathMatch: 'full'
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'dashboard-member',
+    component: DashboardMemberComponent
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },{
     path: "secretary-dashboard",
     component: SecretaryDashboardComponent
   },
@@ -33,6 +54,10 @@ const routes: Routes = [
   {
     path: "event/:id",
     component: SingleEventComponent
+  },
+  {
+    path: "invitation/:id",
+    component: InvitationComponent
   },
   {
     path: "address",
@@ -49,6 +74,10 @@ const routes: Routes = [
   {
     path: 'meeting/:title',
     component: MeetingComponent
+  },
+  {
+    path: 'meeting-member/:title',
+    component: MeetingMemberComponent
   },
   {
     path: '404', component: NotFoundComponent
