@@ -15,7 +15,7 @@
   <div class="owner-name">{{topic.user[0].name}}</div>
 </div>
 
-<div class="mt-2" fxLayout="row" fxLayoutAlign="start center">
+<div class="mt-2" fxLayout="row" fxLayoutAlign="start center" *ngIf="topic.votes_enabled" >
   <div class="owner-label mt-0">Voting:</div>
   <div class="mr-3 vote-up" fxLayout="row" fxLayoutAlign="start center" [ngClass]="a==undefined ? 'vote-grey' :'vote-up'">
     <mdb-icon class="mr-1" fas icon="check" (click)="voteup()"></mdb-icon> {{ topic?.votes_up?.length || 0 }}
