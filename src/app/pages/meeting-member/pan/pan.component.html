@@ -23,4 +23,7 @@
   <div class="vote-down" fxLayout="row" fxLayoutAlign="start center" style="padding-top: 2px;" [ngClass]="b==undefined ? 'vote-grey' :'vote-down'">
     <mdb-icon class="mr-1" fas icon="times" (click)="votedown()"></mdb-icon> {{ topic?.votes_down?.length || 0 }}
   </div>
+  <div style="margin-left: auto; font-size: 20px;  color: #686868;">
+    <mdb-icon class="icon-file" style="cursor: pointer;" fas icon="file-alt" (click)="onOpenDocument()"></mdb-icon>
+  </div>
 </div>
