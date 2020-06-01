@@ -21,7 +21,7 @@ export class SingleEventComponent implements OnInit {
 
   myEvent: any;
   public backgroundimage = "../../../assets/img/5812.jpg";
-  public pptimage = "./assets/img/ppt.png";
+  public pptimage = "~/assets/img/ppt.png";
   room: any;
   users: any[] = [];
   totalUsersToAdd: any[] = [];

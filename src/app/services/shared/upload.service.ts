@@ -7,7 +7,6 @@ import { Upload } from './upload';
 @Injectable({
   providedIn: 'root'
 })
-@Injectable()
 export class UploadService {
 
   constructor(private db: AngularFirestore) { }
