@@ -238,6 +238,8 @@ export class CalendarPageComponent {
         //  });
       })
 
+
+
       var curr_date = this.startingDate.getDate();
       var curr_month = this.startingDate.getMonth() + 1; //Months are zero based
       var curr_year = this.startingDate.getFullYear();
@@ -431,7 +433,7 @@ export class CalendarPageComponent {
 
 
   onItemSelectUser(item: any) {
-
+    console.log(item)
   }
 
   onItemSelectType(item: any) {

@@ -24,7 +24,6 @@ import { GaugeChartModule } from 'angular-gauge-chart';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { ChartsModule } from 'ng2-charts';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FilePondModule } from 'ngx-filepond';
 import { MomentModule } from 'ngx-moment';
@@ -87,7 +86,6 @@ import { NgxDocViewerModule } from 'ngx-doc-viewer';
     DataTablesModule,
     NgbModule,
     FormsModule,
-    Ng2SmartTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
