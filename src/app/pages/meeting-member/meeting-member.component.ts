@@ -38,6 +38,10 @@ export class MeetingMemberComponent implements OnInit {
     this.loadEvent();
     this.innerWidth = window.innerWidth;
   }
+  onOpenDocument(event) {
+    (this.documentModal as any).show()
+  }
+
 
   ngAfterViewInit() {
   }

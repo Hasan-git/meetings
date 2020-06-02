@@ -45,8 +45,8 @@ export class CalendarPageComponent {
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
   filenames: Array<any> = [];
-  string: any = '';
-  agenda: any = '';
+  string: any= '';
+  agenda: any= '';
   viewDate: Date = new Date();
   public url = 'https://us-central1-everteam-meeting.cloudfunctions.net';
   currentUpload: Upload;
@@ -229,11 +229,17 @@ export class CalendarPageComponent {
         }
       };
 
-      this.topics.forEach(user => {
-          this.string+=user.user[0].name+',';
+      let x=[
+        'Mr.Mohamed Rabie KHLIE',
+        'Ms.Rokia BELKEBIR',
+        'Mr.Mohammed DOURI',
+        'Mr.Said CHANDID',
+        'Mr.Lahcen ACHIBANE'
+      ]
+
+      x.forEach(user => {
+          this.string+="<li>"+user+"</li>";
       })
-
-
 
       var curr_date = this.startingDate.getDate();
       var curr_month = this.startingDate.getMonth() + 1; //Months are zero based
@@ -248,12 +254,12 @@ export class CalendarPageComponent {
       var endingdate = curr_year_end + "-" + curr_month_end + "-" + curr_date_end + " at " + endtime;
 
       this.topics.forEach(agenda=>{
-        this.agenda+="Topic:"+agenda.topic+"-Duration:"+agenda.duration+"-Owner:"+agenda.user[0].name+'<br />';
+        this.agenda+="<li>"+agenda.topic+"("+agenda.duration+" minutes)"+" / Owner:"+agenda.user[0].name+"</li>";
       })
 
 
       const body={
-        email:"yahya.abihaidar98@gmail.com",
+        email:"m.farah@everteam-gs.com",
         event_name:this.eventName,
         event_start_date:startingdate,
         event_agenda:this.agenda,
